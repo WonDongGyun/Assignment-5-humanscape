@@ -1,23 +1,9 @@
 # 🔥 Assignment_Humanscape (with NestJS)
 
-🧱 wanted x wecode 프리온보딩 백엔드 코스 - [Assignment 5] Humanscape
+이 Read.me에는 제가 무엇을 했는지만 적혀있습니다. 팀 전체가 무엇을 했는지 궁금하시다면 하단의 링크를 참조해주세요.    
+[Assignment_5_HumanScape 팀 Repository](https://github.com/preOnboarding-Team13/Assignment-5-humanscape)
 
-[휴먼스케이프 사이트](https://humanscape.io/kr/index.html)
-
-[wanted 채용공고 링크](https://www.wanted.co.kr/wd/41413)
-
-
-
-## ☄️ 팀원 소개
-
-| 이름                                     | 담당 기능                 |
-| ---------------------------------------- | ------------------------- |
-| [김바다](https://github.com/sally0226)   | 배치(TrialService) 구현 및 테스트 코드 작성 |
-| [김효민](https://github.com/luckyhyom)   | 배치(TrialService) 구현 및 테스트 코드 작성 |
-| [원동균](https://github.com/WonDongGyun) | Search api pagination 구현 |
-| [이나영](https://github.com/bokiri409)   | Search API Test Code 작성 |
-| [장희진](https://github.com/heejin99)    | Search API Test Code 작성 |
-| [조재복](https://github.com/ildang100)   | DB 모델링 |
+<br/>
 
 <br>
 
@@ -161,7 +147,7 @@ $ npm start
 
 ## 🔗 구현 기능
 
-### 1) Check List
+### Check List
 
 - 임상 정보
 
@@ -179,11 +165,18 @@ $ npm start
 
   ✖️ 임상정보 검색 API 
 
+<br/>
 
+#### [설계 논의 사항](https://github.com/preOnboarding-Team13/Assignment-5-humanscape/wiki/설계-회의-내용)
+#### [오픈 API 조회 방식, For Loop VS Promise.all](https://github.com/preOnboarding-Team13/Assignment-5-humanscape/wiki/오픈-API-조회-방식,-For-Loop-Vs-Promise.all)
+#### [Functional Test 결과](https://github.com/preOnboarding-Team13/Assignment-5-humanscape/wiki/Functional-Test-결과)
 
-### 2) 상세 내용
+<br/>
 
-#### Pair Programming (짝 코딩)
+🧪 내가 이번 프로젝트에서 무엇을 했지?
+-----------------  
+
+**1) Pair Programming (짝 코딩)**
 
 지난 프로젝트들에서도 2명 혹은 3명씩 짝을 지어서 pair programming을 진행했었습니다.
 
@@ -191,12 +184,20 @@ $ npm start
 
 ![image](https://user-images.githubusercontent.com/43634786/142021494-9a783af8-d5d0-4462-b63b-4e415c502f32.png)
 
-#### [설계 논의 사항](https://github.com/preOnboarding-Team13/Assignment-5-humanscape/wiki/설계-회의-내용)
-#### [오픈 API 조회 방식, For Loop VS Promise.all](https://github.com/preOnboarding-Team13/Assignment-5-humanscape/wiki/오픈-API-조회-방식,-For-Loop-Vs-Promise.all)
-#### [Functional Test 결과](https://github.com/preOnboarding-Team13/Assignment-5-humanscape/wiki/Functional-Test-결과)
+<br/>
+
+**2) 검색 API 구현 및 pagination 성능 향상**
+
+검색 API를 구현하는건 그렇게 어렵지 않았습니다. 문제는 pagination이었죠. 4번째 과제 때 `typeorm-cursor-pagination`을 사용해서 limit offset 방식의 pagination을 cursor pagination으로 바꿨었는데요. 처음 사용하는 것이다 보니 생각보다 잘 사용하지 못한것 같고, 코드 부분에서도 아쉬운 점이 많았어서 요번에는 직접 개발해 보는걸로 했습니다. cursor pagination으로 구현하면 순차적으로 페이징 되는 성질이 있기 때문에 count 쿼리는 굳이 필요가 없으나, 전체 데이터 수를 알고 싶어서 넣어보았습니다. 보통 cursor pagination은 페이스북에서 화면스크롤을 밑으로 내렸을 때 자동으로 페이징 되는 기능에 사용되거나 해서, 이 방식으로 pagination을 구현하면 1페이지에서 갑자기 11페이지로 가는 등의 기능을 할 수가 없습니다. 때문에 만약 이런 방식의 pagination을 하고 싶다면 커버링 인덱스 방식을 사용하거나 기타 다른 방식을 사용한다고 하는데, 그런 방법들은 나중에 한번 도전해봐야 할 것 같습니다.
+
+<br>
+
+[TypeOrm 페이지 향상기(1)](https://github.com/preOnboarding-Team13/Assignment-4-8percent/wiki/TypeOrm-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%84%B1%EB%8A%A5-%ED%96%A5%EC%83%81-%EB%8F%84%EC%A0%84%EA%B8%B0)
 
 #### [TypeOrm 페이지 향상기(2)](https://github.com/preOnboarding-Team13/Assignment-5-humanscape/wiki/TypeOrm-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%84%B1%EB%8A%A5-%ED%96%A5%EC%83%81-%EB%8F%84%EC%A0%84%EA%B8%B0(2))
+
 <br>
+
 
 ## 🐾 API
 
